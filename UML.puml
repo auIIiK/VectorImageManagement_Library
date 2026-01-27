@@ -1,0 +1,107 @@
+@startuml
+
+
+
+    class Logger{
+    }
+
+    class SVGstream{
+
+    }
+
+    class TikZstream{
+    }
+
+
+    package Grawink {
+        class GrawEditor<template <typename ShapeType, typename... Args>> {
+            -static GrawEditor* instance
+            +static GrawEditor& GetEditor(double width, double height, Color colorFond)
+        }
+
+        class Action {
+        }
+
+        enum ActionType {
+        }
+    }
+
+    package Geom2D {
+        class Geom2D {
+        }
+        class ShapeType {
+
+        }
+    }
+
+    Grawink.Action <|-- Grawink.ActionType
+    Grawink.GrawEditor <|-- Grawink.Action
+    Geom2D.Geom2D <|-- Grawink.GrawEditor
+
+
+    Color <|-- Fill
+    Color <|-- SVGstream
+    Color <|-- TikZstream
+
+
+    Fill <|-- Disc
+    Fill <|-- Rectangle
+    Fill <|-- Stroke
+    Fill <|-- Text
+    Fill <|-- Triangle
+    Fill <|-- Ellipse
+
+
+    Geom2D.Geom2D <|-- Geom2D.ShapeType
+    Geom2D.Geom2D <|-- Disc
+    Geom2D.Geom2D <|-- Polygon
+    Geom2D.Geom2D <|-- Rectangle
+    Geom2D.Geom2D <|-- Stroke
+    Geom2D.Geom2D <|-- Text
+    Geom2D.Geom2D <|-- Triangle
+    Geom2D.Geom2D <|-- Ellipse
+
+
+    SVGstream <|-- Geom2D.Geom2D
+    TikZstream <|-- Geom2D.Geom2D
+
+
+    Logger <|-- Geom2D.Geom2D
+    Logger <|-- Grawink.GrawEditor
+    Logger <|-- SVGstream
+    Logger <|-- TikZstream
+    Logger <|-- Color
+    Logger <|-- Fill
+    Logger <|-- Transform
+    Logger <|-- Point
+    Logger <|-- ShapeType
+    Logger <|-- Disc
+    Logger <|-- Polygon
+    Logger <|-- Rectangle
+    Logger <|-- Stroke
+    Logger <|-- Text
+    Logger <|-- Triangle
+    Logger <|-- Ellipse
+    Logger <|-- ReallocatablePointsArray
+    Logger <|-- PointsArray
+
+
+    Transform <|-- PointsArray
+    Transform <|-- Geom2D.Geom2D
+
+
+    PointsArray <|-- ReallocatablePointsArray
+
+
+    Point <|-- PointsArray
+    Point <|-- Geom2D.Geom2D
+
+
+    ReallocatablePointsArray <|-- Polygon
+
+
+    Rectangle <|-- Square
+
+
+
+@enduml
