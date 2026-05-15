@@ -65,5 +65,3 @@ Vous pouvez également consulter le dossier `test/` pour voir les fichiers sourc
 
 Pour toute question ou suggestion, n'hésitez pas à nous contacter à l'adresse suivante :
 
-- MUNSCH Bryan <bryan.munsch@etudiant.univ-reims.fr>
-- RYBAK Thomas <thomas.rybak@etudiant.univ-reims.fr>
